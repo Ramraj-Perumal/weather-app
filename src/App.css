@@ -1,38 +1,72 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
+  height: 100vh;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  flex-direction: column;
+}
+
+body{
+  background-color: #e5e5e7;
+}
+
+.container{
+  justify-content: center;
+  align-items: center;
+  background-color: #00001f;
+  height: 350px;
+  width: 40%;
+  border-radius: 20px;
+  box-shadow: 8px 8px 2px #b5b5cb;
+}
+
+label{
+  font-weight: 700;
+}
+
+.input{
+  margin-top: 40px;
+  width: 60%;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  border: none !important;  
+  outline: none;
+  padding: 0 12px;
+  border-radius: 20px 0 0 20px;
+}
+
+.btn{
+  padding: 5px 15px;
+  cursor: pointer;
+  height: 40px;
+  background-color: #bdbde6;
+  color: black;
+  border: none;
+  margin-left: -20px;
+  font-size: 16px;
+  border-radius: 0 20px 20px 0;
+  font-weight: bold;
+}
+
+.head{
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00001f;
+  margin-bottom: 20px;
+}
+
+.humspy{
+  width: 90%;
+  margin: auto;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.content{
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
