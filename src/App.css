@@ -74,6 +74,14 @@ label{
 @media (min-width:320px){
   .container{
     width: 90%;
+    height: 450px;
+  }
+  .cityName{
+    font-size: 30px;
+  }
+
+  .climate{
+    font-size: 24px;
   }
 }
 
