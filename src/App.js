@@ -1,6 +1,6 @@
 import './App.css';
 import Axios from 'axios';
-import {useState} from 'react';
+import {useRef, useState} from 'react';
 import { WiHumidity  } from "react-icons/wi";
 import { FiWind } from "react-icons/fi";
 import { BsCloudHaze2Fill } from "react-icons/bs";
@@ -13,10 +13,14 @@ function App() {
   const [city, setCity] = useState("");
   const [data, setData] = useState();
 
+  const inputRef = useRef(null);
+
   const fetchData = async () =>{
     try{
       const response = await Axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${KEY}`)
       setData(response.data);
+      setCity("");
+      inputRef.current.focus();
       console.log(response.data);
     }
     catch(err){
@@ -31,8 +35,8 @@ function App() {
       <div className='head'>Weather App</div>
       </div>
      <div className="container">
-      <input className="input" type="text" 
-      placeholder="Please enter a city name"
+      <input className="input" type="text" ref={inputRef}
+      placeholder="Enter city name"
       value={city}
       onChange={e => setCity(e.target.value)}/>
       <button onClick={fetchData} className="btn">Fetch</button>
@@ -46,7 +50,7 @@ function App() {
             <label>Lon - {data.coord.lon}</label>
           </div>
           <div className='humspy'>
-            <h3>Humidity {data.main.humidity} <WiHumidity style={{fontSize:"25px"}}/></h3>
+            <h4>Humidity {data.main.humidity} <WiHumidity style={{fontSize:"25px"}}/></h4>
             <h4>Wind Speed {data.wind.speed} <FiWind style={{fontSize:"25px"}}/></h4>
           </div>
           </div>
